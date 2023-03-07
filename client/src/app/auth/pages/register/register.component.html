@@ -1,0 +1,48 @@
+<form 
+    autocomplete="off"
+    [formGroup]="miFormulario"
+    (ngSubmit)="register()">
+    <div>
+        <h2>Register</h2>
+    </div>
+
+    <label for="name">
+        <input
+            type="text"
+            formControlName="name"
+            placeholder="Ingrese su nombre"
+            >
+    </label>
+
+    <label for="email">
+        <input 
+            type="email"
+            formControlName="email"
+            placeholder="Ingrese su email"
+            >
+    </label>
+
+    <label for="password">
+        <input 
+            type="password"
+            formControlName="password"
+            placeholder="Ingrese su password"
+            >
+    </label>
+
+    <div>
+        <button
+            type="submit"
+            [disabled]="miFormulario.invalid">
+            Register
+        </button>
+    </div>
+
+    <div>
+        <span>Ya estas registrado?</span>
+        <a routerLink="/auth/login">
+            Logueate
+        </a>
+    </div>
+    
+</form>
